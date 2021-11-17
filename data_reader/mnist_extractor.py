@@ -1,7 +1,7 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from struct import *
 import numpy as np
@@ -9,14 +9,14 @@ from util.utils import get_one_hot_from_label_index
 
 
 def mnist_extract_samples(sample_list, is_train=True, file_path=os.path.dirname(__file__)):
-    file_path_extended = file_path + '/mnist'
+    file_path_extended = 'datasets' + '/mnist'
 
     if is_train:
-        f_images = open(file_path_extended + '/train-images.idx3-ubyte', 'rb')
-        f_labels = open(file_path_extended + '/train-labels.idx1-ubyte', 'rb')
+        f_images = open(file_path_extended + '/train-images-idx3-ubyte', 'rb')
+        f_labels = open(file_path_extended + '/train-labels-idx1-ubyte', 'rb')
     else:
-        f_images = open(file_path_extended + '/t10k-images.idx3-ubyte', 'rb')
-        f_labels = open(file_path_extended + '/t10k-labels.idx1-ubyte', 'rb')
+        f_images = open(file_path_extended + '/t10k-images-idx3-ubyte', 'rb')
+        f_labels = open(file_path_extended + '/t10k-labels-idx1-ubyte', 'rb')
 
     s1, s2, s3, s4 = f_images.read(4), f_images.read(4), f_images.read(4), f_images.read(4)
     mn_im = unpack('>I', s1)[0]
