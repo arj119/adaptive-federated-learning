@@ -6,6 +6,7 @@
 .idea/
 venv/
 *.bin
-*.idx3-ubyte
-*.idx1-ubyte
+*-idx3-ubyte
+*-idx1-ubyte
+*.gz
 *.csv
