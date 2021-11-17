@@ -10,3 +10,5 @@ venv/
 *-idx1-ubyte
 *.gz
 *.csv
+__pycache__
+logs
